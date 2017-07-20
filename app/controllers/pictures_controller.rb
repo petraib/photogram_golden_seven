@@ -15,7 +15,9 @@ class PicturesController <ApplicationController
       
       
       Photo.destroy(params[:toast_id])
-      render("pic_templates/destroy_row.html.erb") 
+      #render("pic_templates/destroy_row.html.erb") 
+      redirect_to("/photos")
+
     end
     
     def edit_form
