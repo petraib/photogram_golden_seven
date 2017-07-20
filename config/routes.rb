@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
   mount WebGit::Engine, at: "/rails/git"
   
+  get("/", { :controller => "pictures", :action => "index" })
+
   # CREATE
   get("/photos/new", { :controller => "pictures", :action => "new_form" })
   get("/create_photo", { :controller => "pictures", :action => "create_row" })

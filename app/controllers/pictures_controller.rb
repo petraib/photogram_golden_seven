@@ -7,7 +7,8 @@ class PicturesController <ApplicationController
        
        p.save
        
-       render("pic_templates/create_row.html.erb") 
+       #render("pic_templates/create_row.html.erb") 
+       redirect_to("/photos")
     end
     
     def destroy_row
