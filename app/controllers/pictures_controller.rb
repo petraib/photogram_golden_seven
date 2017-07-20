@@ -1,14 +1,27 @@
 class PicturesController <ApplicationController
     def create_row
+      
+       p = Photo.new()
+       p.source = params[:the_source]
+       p.caption =  params[:the_caption]
+       
+       p.save
+       
        render("pic_templates/create_row.html.erb") 
     end
     
     def destroy_row
-       render("pic_templates/destroy_row.html.erb") 
+      
+      
+      Photo.destroy(params[:toast_id])
+      render("pic_templates/destroy_row.html.erb") 
     end
     
     def edit_form
-       render("pic_templates/edit_form.html.erb") 
+      
+      @photo = Photo.find(params[:an_id])
+      
+      render("pic_templates/edit_form.html.erb") 
     end
     
     def index
@@ -29,6 +42,12 @@ class PicturesController <ApplicationController
     end
     
     def update_row
+      
+       p = Photo.find(params[:some_id])
+       p.source = params[:the_source]
+       p.caption =  params[:the_caption]
+       
+       p.save
        render("pic_templates/update_row.html.erb") 
     end
     
