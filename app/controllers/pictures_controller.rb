@@ -20,7 +20,10 @@ class PicturesController <ApplicationController
     end
     
     def show
-       render("pic_templates/show.html.erb") 
+      
+      @pic = Photo.find(params["the_id"].to_i)
+      render("pic_templates/show.html.erb") 
+
     end
     
     def update_row
