@@ -51,7 +51,8 @@ class PicturesController <ApplicationController
        p.caption =  params[:the_caption]
        
        p.save
-       render("pic_templates/update_row.html.erb") 
+       #render("pic_templates/update_row.html.erb") 
+       redirect_to("/photos/" + params[:some_id] )
     end
     
     
